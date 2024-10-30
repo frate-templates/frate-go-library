@@ -35,6 +35,13 @@ add_library({{.ProjectName}} SHARED
   {{- end }}
 )
 
+target_include_directories(FrateLib 
+    PUBLIC 
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/{{ .IncludeDir }}>
+        $<INSTALL_INTERFACE:{{ .IncludeDir }}>
+)
+
+
 target_link_libraries({{ .ProjectName }} {{- range .Dependencies }}
 {{- if .Link }} {{ .Link }} {{- else }} {{.Name}}{{- end }}
 {{- end}})
