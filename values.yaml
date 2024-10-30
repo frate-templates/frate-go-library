@@ -3,6 +3,7 @@ frate:
   IncludeDir: Include
   SourceFiles:
     - src/main.cpp.gotmpl
+  BuildCmd: "echo 'built library'"
 project:
   special: values
 
